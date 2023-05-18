@@ -52,9 +52,7 @@ class ProductController extends Controller
         // $product->price = $request->price;
         // $product->save();
         Product::create($request->all());
-        return response()->json([
-            'status' => 'success'
-        ]);
+        return response()->json(['status' => 'success']);
     }
 
     /**
