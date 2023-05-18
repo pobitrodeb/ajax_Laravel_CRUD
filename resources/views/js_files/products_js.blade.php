@@ -27,6 +27,7 @@
                 if(response.status == 'success'){
                     $('#addProductModal').modal('hide');
                     $('#addProductForm')[0].reset();
+                    $('.table').load(location.herf+ ' .table');
                 }
                 },error:function(err){
                     let error = err.responseJSON;

@@ -37,10 +37,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($products as $product)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->price }}</td>
                                 <td>
                                     <a href="" class="btn btn-info"> <i class="las la-eye"></i> </a>
                                     <a href="" class="btn btn-primary"><i class="las la-pen-square"></i></a>
@@ -48,8 +49,11 @@
                                 </td>
                             </tr>
 
+                            @endforeach
+
                         </tbody>
                     </table>
+               {!! $products->links() !!}
                 </div>
             </div>
         </div>
