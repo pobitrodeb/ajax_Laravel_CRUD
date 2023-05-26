@@ -100,4 +100,14 @@ class ProductController extends Controller
     {
         //
     }
+    public function show_data()
+    {
+        $records = Product::latest()->paginate(5);
+        return view('welcome',compact('records'));
+    }
+
+    public function ajax_paginate(Request $request){
+        $records = Product::latest()->paginate(5);
+        return view('paginate_records',compact('records'))->render();
+    }
 }
